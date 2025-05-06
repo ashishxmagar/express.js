@@ -1,13 +1,10 @@
 const express = require('express');
 const app = express();
 
-
-app.use('/', (req, res, next) => {
-  console.log('User hit the request');
-  res.send('Thank you for your Request...');
+app.get('/query', (req, res) => {
+  console.log(req.query)
+  res.send('Hello World');
 })
-
-
 
 
 app.listen(3000, () => {
