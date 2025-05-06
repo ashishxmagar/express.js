@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 
 
-
-app.get('/', (req, res) => {
-  res.write('Hello World');
+app.get('/query', (req, res) => {
+  console.log(req.query.name)
+  res.send('Hello World');
 })
 
 
