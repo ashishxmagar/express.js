@@ -1,9 +1,19 @@
 const express = require('express');
 const app = express();
 
+app.get('/query', (req, res, next) => {
+  console.log('Response 1');
+  next('route');
+})
+
+app.get('/query', (req, res, next) => {
+  console.log('Response 2');
+  res.send('Hello 2');
+})
+
+
 app.get('/query', (req, res) => {
-  console.log(req.query)
-  res.send('Hello World');
+  res.send('Hello 3');
 })
 
 
